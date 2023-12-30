@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<modDesc descVersion="61" >
+    <author>Silverlore</author>
+    <version>1.0.0.0</version>
+    <title>
+        <en>lift and lower implement extensions</en>
+    </title>
+    <description>
+        <en><![CDATA[A script which makes it possible to assign keys to lift and lower front and back implement without switching between implements]]></en>
+    </description>
+
+    <l10n filenamePrefix="translations/translation"/>
+
+    <iconFilename>icon.dds</iconFilename>
+
+    <multiplayer supported = "true" />
+
+    <actions>
+        <action name="PHT_ROTATE_RIGHT" axisType="HALF" />
+    </actions>
+
+    <extraSourceFiles>
+        <sourceFile filename="src/launcher.lua" />
+        
+    </extraSourceFiles>
+
+    <specializations>
+        <specialization name="FrontBackControl" className="FrontBackControl" filename="src/vehicles/specialization/FrontBackControl.lua" />
+    </specializations>
+</modDesc>

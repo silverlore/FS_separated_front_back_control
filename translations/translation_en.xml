@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<l10n>
+    <translationContributors>Silverlore</translationContributors>
+
+    <texts>
+        <text name="input_SFBC_TOGGLE_FRONT" text="Lift/Lower front implement"/>
+        <text name="input_SFBC_TOGGLE_BACK" text="Lift/Lower Back implement"/>
+        <text name="input_SFBC_LIFT_FRONT" text="Lift front implement"/>
+        <text name="input_SFBC_LOWER_FRONT" text="Lower front implement"/>
+        <text name="input_SFBC_LIFT_BACK" text="Lift back implement"/>
+        <text name="input_SFBC_LOWER_BACK" text="Lower back implement"/>
+    </texts>
+</l10n>
