@@ -16,7 +16,12 @@
     <multiplayer supported = "true" />
 
     <actions>
-        <action name="PHT_ROTATE_RIGHT" axisType="HALF" />
+        <action name="SFBC_TOGGLE_FRONT" axisType="HALF" />
+        <action name="SFBC_TOGGLE_BACK" axisType="HALF" />
+        <action name="SFBC_LIFT_FRONT" axisType="HALF" />
+        <action name="SFBC_LOWER_FRONT" axisType="HALF" />
+        <action name="SFBC_LIFT_BACK" axisType="HALF" />
+        <action name="SFBC_LOWER_BACK" axisType="HALF" />
     </actions>
 
     <extraSourceFiles>
