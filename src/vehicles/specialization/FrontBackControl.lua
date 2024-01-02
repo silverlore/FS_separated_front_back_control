@@ -79,18 +79,25 @@ function actionHandleLowering(self, actionName, inputValue, callbackState, isAna
     if actionName == InputAction.SFBC_TOGGLE_FRONT or actionName == InputAction.SFBC_LIFT_FRONT or actionName == InputAction.SFBC_LOWER_FRONT then
         if #spec.frontJoints > 0 then
             if actionName == InputAction.SFBC_LIFT_FRONT then
+                direction = false
             elseif actionName == InputAction.SFBC_LOWER_FRONT then
+                direction = true
             end
             for joint in spec.frontJoints do
                 
                 handleLowerImplementByAttacherJointIndex(joint.jointIndex, direction)
             end
         end
-    elseif actionName == InputAction.SFBC_TOGGLE_FRONT or actionName == InputAction.SFBC_LIFT_FRONT or actionName == InputAction.SFBC_LOWER_FRONT then
+    elseif actionName == InputAction.SFBC_TOGGLE_BACK or actionName == InputAction.SFBC_LIFT_BACK or actionName == InputAction.SFBC_LOWER_BACK then
         if #spec.backJoints > 0 then
+            if actionName == InputAction.SFBC_LIFT_BACK then
+                direction = false
+            elseif actionName == InputAction.SFBC_LOWER_BACK then
+                direction = true
+            end
             for joint in spec.frontJoints do
 
-                self:setJointMoveDown(index, direction, false)
+                handleLowerImplementByAttacherJointIndex(joint.jointIndex, direction)
             end+
         end
     end if
