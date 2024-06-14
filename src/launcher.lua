@@ -22,4 +22,6 @@ end
 local function init()
     print("Lift/lower implement extention: started mod.")
     TypeManager.validateTypes = Utils.prependedFunction(TypeManager.validateTypes, validateVehicleTypes)
+end
 
+init()
