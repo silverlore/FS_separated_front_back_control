@@ -30,6 +30,6 @@
     </extraSourceFiles>
 
     <specializations>
-        <specialization name="FrontBackControl" className="FrontBackControl" filename="src/vehicles/specialization/FrontBackControl.lua" />
+        <specialization name="frontBackControl" className="FrontBackControl" filename="src/vehicles/specialization/FrontBackControl.lua" />
     </specializations>
 </modDesc>

@@ -11,9 +11,10 @@ local function validateVehicleTypes(typeManager)
         FrontBackControl.modName = modName
 
         for typeName, typeEntry in pairs(g_vehicleTypeManager:getTypes()) do 
-            if SpecializationUtil.hasSpecialization(AttacherJoints, typeEntry.specializations) and
+            if SpecializationUtil.hasSpecialization(AttacherJoints, typeEntry.specializations) and 
+                SpecializationUtil.hasSpecialization(Drivable, typeEntry.specializations) and 
                 not SpecializationUtil.hasSpecialization(FrontBackControl, typeEntry.specializations) then
-                    typeManager:addSpecialization(typeName, modName .. ".FrontBackControl")
+                    typeManager:addSpecialization(typeName, modName .. ".frontBackControl")
             end
         end
     end
