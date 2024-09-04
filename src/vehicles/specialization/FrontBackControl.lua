@@ -76,6 +76,8 @@ function FrontBackControl:actionHandleLowering(actionName, inputValue, callbackS
     local attacherJoints_spec  = self.spec_attacherJoints
     local direction = nil
 
+    direction = not attacherJoint.moveDown
+
     if actionName == InputAction.SFBC_TOGGLE_FRONT or actionName == InputAction.SFBC_LIFT_FRONT or actionName == InputAction.SFBC_LOWER_FRONT then
         if table.getn(spec.frontJoints) > 0 then
             if actionName == InputAction.SFBC_LIFT_FRONT then
@@ -84,7 +86,7 @@ function FrontBackControl:actionHandleLowering(actionName, inputValue, callbackS
                 direction = true
             end
             for _, joint in pairs(spec.frontJoints) do
-                self:handleLowerImplementByAttacherJointIndex(joint.jointIndex, direction)
+                self:doLowering(joint, direction)
             end
         end
     elseif actionName == InputAction.SFBC_TOGGLE_BACK or actionName == InputAction.SFBC_LIFT_BACK or actionName == InputAction.SFBC_LOWER_BACK then
@@ -95,12 +97,26 @@ function FrontBackControl:actionHandleLowering(actionName, inputValue, callbackS
                 direction = true
             end
             for _, joint in pairs(spec.backJoints) do
-                self:handleLowerImplementByAttacherJointIndex(joint.jointIndex, direction)
+                self:doLowering(joint, direction)
             end
         end
     end
 end
 
-
+function FrontBackControl:doLowering(joint, direction)
+    local implement = self:getImplementFromAttacherJointIndex(joint.jointIndex)
+    if implement ~= nil then
+        if implement.object.setLoweredAll ~= nil then
+            local attacherJoint = self.spec_attacherJoints.attacherJoints[joint.jointIndex]
+            local doLowering = nil
+            if direction ~= nil then
+                doLowering = direction
+            else
+                doLowering = not attacherJoint.moveDown
+            end
+            implement.object.setLoweredAll(doLowering, joint.jointIndex)
+        end
+    end
+end
 
 
