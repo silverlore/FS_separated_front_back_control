@@ -1,7 +1,7 @@
 #!/bin/bash
 
 INCLUDE="*.xml *.lua *.dds src/vehicles/specialization/*.lua src/utils/*.lua src/*.lua translations/*.xml"
-ZIP_FILENAME="FS22_FrontBackLiftControl.zip"
+ZIP_FILENAME="FS25_FrontBackLiftControl.zip"
 
 zip -r  $ZIP_FILENAME $INCLUDE
 

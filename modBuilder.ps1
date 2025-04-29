@@ -1,5 +1,5 @@
 $include = @("*.xml", "*.lua", "*.dds", "src\vehicles\specialization\*.lua", "src\vehicles\specialization\event\*.lua", "src\*.lua", "translations\*.xml")
-$zipFilename = "FS22_FrontBackLiftControl.zip"
+$zipFilename = "FS25_FrontBackLiftControl.zip"
 
 if(test-path "$env:ProgramFiles\WinRAR\WinRAR.exe")
 {
