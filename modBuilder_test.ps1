@@ -5,5 +5,5 @@ if(test-path "$env:ProgramFiles\WinRAR\WinRAR.exe"){
     Set-Alias winrar "$env:ProgramFiles\WinRAR\WinRar.exe"
     Start-Process -wait -FilePath winrar -ArgumentList "a -afzip $zipFilename $include"
 
-    Copy-Item .\$zipFilename $home'\Documents\my games\FarmingSimulator2022\mods\'
+    Copy-Item .\$zipFilename $home'\Documents\my games\FarmingSimulator2025\mods\'
 }
